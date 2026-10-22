@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Philippe & Sarah — Mariage</title>
+  <meta name="description" content="Le mariage de Philippe Niles et Sarah Roy-Molgat. Informations et confirmation de présence.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💜</text></svg>">
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <a href="#accueil" class="nav-logo">P <span>&amp;</span> S</a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" id="navToggle">
+      <span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#jour-j">Le jour J</a></li>
+      <li><a href="#lieu">Lieu</a></li>
+      <li><a href="#repas">Repas</a></li>
+      <li><a href="#hebergement">Hébergement</a></li>
+      <li><a href="#faq">Questions</a></li>
+      <li><a href="#rsvp" class="nav-cta">RSVP</a></li>
+    </ul>
+  </nav>
+
+  <!-- ACCUEIL -->
+  <header class="hero" id="accueil">
+    <svg class="sprig sprig-left" viewBox="0 0 120 300" aria-hidden="true"><use href="#lavender"/></svg>
+    <svg class="sprig sprig-right" viewBox="0 0 120 300" aria-hidden="true"><use href="#lavender"/></svg>
+
+    <p class="hero-kicker">Nous nous marions</p>
+    <h1 class="hero-names">
+      Philippe Niles
+      <span class="amp">&amp;</span>
+      Sarah Roy-Molgat
+    </h1>
+    <div class="divider" aria-hidden="true"><span></span>✦<span></span></div>
+    <!-- ✏️ À COMPLÉTER : date et ville -->
+    <p class="hero-date">Samedi 12 juin 2027</p>
+    <p class="hero-place">Ville, Province</p>
+
+    <div class="countdown" id="countdown" aria-live="polite">
+      <div><span data-unit="days">—</span><small>jours</small></div>
+      <div><span data-unit="hours">—</span><small>heures</small></div>
+      <div><span data-unit="minutes">—</span><small>minutes</small></div>
+    </div>
+
+    <a href="#rsvp" class="btn">Confirmer ma présence</a>
+    <!-- ✏️ À COMPLÉTER : date limite -->
+    <p class="hero-note">Merci de répondre avant le 1<sup>er</sup> avril 2027</p>
+  </header>
+
+  <main>
+
+    <!-- LE JOUR J -->
+    <section class="section" id="jour-j">
+      <p class="eyebrow">Programme</p>
+      <h2>Le jour J</h2>
+      <!-- ✏️ À COMPLÉTER : heures et description -->
+      <ol class="timeline">
+        <li>
+          <time>15 h 00</time>
+          <h3>Cérémonie</h3>
+          <p>Arrivez quelques minutes à l'avance pour trouver votre place.</p>
+        </li>
+        <li>
+          <time>16 h 00</time>
+          <h3>Cocktail</h3>
+          <p>Bouchées, bulles et photos dans le jardin.</p>
+        </li>
+        <li>
+          <time>18 h 30</time>
+          <h3>Souper</h3>
+          <p>Un repas végétarien servi à table.</p>
+        </li>
+        <li>
+          <time>21 h 00</time>
+          <h3>Soirée dansante</h3>
+          <p>Jusqu'aux petites heures!</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- LIEU -->
+    <section class="section section-tint" id="lieu">
+      <p class="eyebrow">Où</p>
+      <h2>Le lieu</h2>
+      <div class="cards">
+        <!-- ✏️ À COMPLÉTER : nom, adresse, lien Google Maps -->
+        <article class="card">
+          <h3>Cérémonie &amp; réception</h3>
+          <p class="card-strong">Nom du domaine</p>
+          <p>123, rue Exemple<br>Ville (Province) A1B 2C3</p>
+          <a class="link" href="https://maps.google.com/?q=Montréal" target="_blank" rel="noopener">Voir sur la carte →</a>
+        </article>
+        <article class="card">
+          <h3>Stationnement</h3>
+          <p>Un stationnement gratuit est disponible sur place. Le covoiturage est encouragé!</p>
+        </article>
+        <article class="card">
+          <h3>Tenue</h3>
+          <p>Tenue de soirée. Les touches de lavande et de pastel sont les bienvenues.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- REPAS -->
+    <section class="section" id="repas">
+      <p class="eyebrow">À table</p>
+      <h2>Le repas</h2>
+      <div class="feature">
+        <svg class="feature-icon" viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M32 56c0-14 4-26 18-36-16 2-24 12-24 24M32 56c0-10-3-18-14-24 12 0 18 8 18 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        <p class="feature-lead">Le menu au complet est <strong>végétarien</strong>.</p>
+        <p>Du cocktail jusqu'au dessert, tout ce qui sera servi est sans viande ni poisson. Si vous avez d'autres restrictions alimentaires ou allergies (végane, sans gluten, noix, etc.), indiquez-les dans le formulaire RSVP et nous nous assurerons que vous soyez bien servis.</p>
+      </div>
+    </section>
+
+    <!-- HÉBERGEMENT -->
+    <section class="section section-tint" id="hebergement">
+      <p class="eyebrow">Pour dormir</p>
+      <h2>Hébergement</h2>
+      <!-- ✏️ À COMPLÉTER : hôtels suggérés -->
+      <div class="cards">
+        <article class="card">
+          <h3>Hôtel suggéré</h3>
+          <p class="card-strong">Nom de l'hôtel</p>
+          <p>À 10 minutes du lieu. Mentionnez « Mariage Niles–Roy-Molgat » pour le tarif de groupe.</p>
+          <a class="link" href="#" target="_blank" rel="noopener">Réserver →</a>
+        </article>
+        <article class="card">
+          <h3>Autre option</h3>
+          <p class="card-strong">Nom de l'auberge</p>
+          <p>Plus petit et charmant, à 15 minutes du lieu.</p>
+          <a class="link" href="#" target="_blank" rel="noopener">Réserver →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <p class="eyebrow">Bon à savoir</p>
+      <h2>Questions fréquentes</h2>
+      <div class="faq">
+        <details>
+          <summary>Puis-je venir accompagné(e)?</summary>
+          <p>Si votre invitation mentionne une personne accompagnatrice, oui! Indiquez simplement son nom dans le formulaire RSVP.</p>
+        </details>
+        <details>
+          <summary>Les enfants sont-ils invités?</summary>
+          <!-- ✏️ À COMPLÉTER -->
+          <p>Nous vous le confirmerons sur votre invitation.</p>
+        </details>
+        <details>
+          <summary>Y aura-t-il des options pour les restrictions alimentaires?</summary>
+          <p>Tout le menu est végétarien. Pour toute autre restriction ou allergie, dites-le-nous dans le RSVP.</p>
+        </details>
+        <details>
+          <summary>Avez-vous une liste de cadeaux?</summary>
+          <!-- ✏️ À COMPLÉTER -->
+          <p>Votre présence est le plus beau des cadeaux. Pour ceux qui le souhaitent, une boîte à cartes sera disponible sur place.</p>
+        </details>
+        <details>
+          <summary>J'ai répondu, mais mes plans ont changé.</summary>
+          <p>Aucun problème : remplissez de nouveau le formulaire et nous garderons votre réponse la plus récente, ou écrivez-nous directement.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- RSVP -->
+    <section class="section section-rsvp" id="rsvp">
+      <p class="eyebrow">Répondez s'il vous plaît</p>
+      <h2>RSVP</h2>
+      <p class="section-intro">Une réponse par invitation, s'il vous plaît, avant le 1<sup>er</sup> avril 2027.</p>
+
+      <form class="rsvp" id="rsvpForm" novalidate>
+        <div class="field">
+          <label for="nom">Votre nom complet</label>
+          <input id="nom" name="nom" type="text" autocomplete="name" required>
+        </div>
+
+        <div class="field">
+          <label for="courriel">Courriel</label>
+          <input id="courriel" name="courriel" type="email" autocomplete="email" required>
+          <small>Pour vous envoyer les derniers détails.</small>
+        </div>
+
+        <fieldset class="field">
+          <legend>Serez-vous des nôtres?</legend>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="presence" value="Oui" required><span>Avec joie!</span></label>
+            <label class="choice"><input type="radio" name="presence" value="Non"><span>Malheureusement non</span></label>
+          </div>
+        </fieldset>
+
+        <div class="when-yes" hidden>
+          <div class="field">
+            <label for="restrictions">Restrictions alimentaires ou allergies</label>
+            <input id="restrictions" name="restrictions" type="text" placeholder="Ex. : végane, sans gluten, allergie aux noix… (laissez vide si aucune)">
+            <small>Rappel : le menu au complet est végétarien.</small>
+          </div>
+
+          <fieldset class="field">
+            <legend>Serez-vous accompagné(e)?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="accompagne" value="Oui"><span>Oui</span></label>
+              <label class="choice"><input type="radio" name="accompagne" value="Non" checked><span>Non</span></label>
+            </div>
+          </fieldset>
+
+          <div class="when-plus-one" hidden>
+            <div class="field">
+              <label for="nomAccompagnateur">Nom de la personne qui vous accompagne</label>
+              <input id="nomAccompagnateur" name="nomAccompagnateur" type="text">
+            </div>
+            <div class="field">
+              <label for="restrictionsAccompagnateur">Ses restrictions alimentaires ou allergies</label>
+              <input id="restrictionsAccompagnateur" name="restrictionsAccompagnateur" type="text" placeholder="Laissez vide si aucune">
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="message">Un petit mot pour les mariés <span class="optional">(facultatif)</span></label>
+          <textarea id="message" name="message" rows="3"></textarea>
+        </div>
+
+        <!-- Piège à robots : invisible pour les humains -->
+        <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <p class="form-error" id="formError" role="alert" hidden></p>
+        <button type="submit" class="btn btn-full" id="submitBtn">Envoyer ma réponse</button>
+      </form>
+
+      <div class="rsvp-thanks" id="rsvpThanks" hidden tabindex="-1">
+        <svg viewBox="0 0 120 300" aria-hidden="true"><use href="#lavender"/></svg>
+        <h3 id="thanksTitle">Merci!</h3>
+        <p id="thanksText">Votre réponse a bien été reçue.</p>
+        <button type="button" class="link" id="rsvpAgain">Modifier ma réponse</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer-names">Philippe <span>&amp;</span> Sarah</p>
+    <!-- ✏️ À COMPLÉTER : courriel de contact -->
+    <p>Une question? Écrivez-nous à <a href="mailto:philippe.niles@gmail.com">philippe.niles@gmail.com</a></p>
+  </footer>
+
+  <!-- Brin de lavande réutilisable -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="lavender" viewBox="0 0 120 300">
+      <path d="M60 300 C60 220 58 150 62 40" fill="none" stroke="var(--stem)" stroke-width="2" stroke-linecap="round"/>
+      <path d="M60 230 C40 215 28 200 22 180 M61 200 C80 188 92 172 98 152" fill="none" stroke="var(--stem)" stroke-width="1.5" stroke-linecap="round"/>
+      <g fill="var(--bud)">
+        <ellipse cx="62" cy="38" rx="5" ry="9"/>
+        <ellipse cx="54" cy="52" rx="5" ry="9" transform="rotate(-25 54 52)"/>
+        <ellipse cx="70" cy="54" rx="5" ry="9" transform="rotate(25 70 54)"/>
+        <ellipse cx="53" cy="70" rx="5.5" ry="10" transform="rotate(-25 53 70)"/>
+        <ellipse cx="71" cy="72" rx="5.5" ry="10" transform="rotate(25 71 72)"/>
+        <ellipse cx="52" cy="90" rx="6" ry="10" transform="rotate(-25 52 90)"/>
+        <ellipse cx="71" cy="92" rx="6" ry="10" transform="rotate(25 71 92)"/>
+        <ellipse cx="52" cy="111" rx="6" ry="10" transform="rotate(-25 52 111)"/>
+        <ellipse cx="70" cy="113" rx="6" ry="10" transform="rotate(25 70 113)"/>
+        <ellipse cx="53" cy="133" rx="5.5" ry="9" transform="rotate(-25 53 133)"/>
+        <ellipse cx="69" cy="135" rx="5.5" ry="9" transform="rotate(25 69 135)"/>
+      </g>
+      <g fill="var(--leaf)">
+        <ellipse cx="24" cy="178" rx="4" ry="12" transform="rotate(-50 24 178)"/>
+        <ellipse cx="97" cy="150" rx="4" ry="12" transform="rotate(50 97 150)"/>
+      </g>
+    </symbol>
+  </svg>
+
+  <script src="script.js"></script>
+</body>
+</html>

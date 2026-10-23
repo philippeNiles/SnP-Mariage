@@ -14,7 +14,7 @@
 <body>
 
   <nav class="nav" id="nav">
-    <a href="#accueil" class="nav-logo">S <span>&amp;</span> P</a>
+    <a href="#accueil" class="nav-logo" data-info="initiales"></a>
     <button class="nav-toggle" aria-label="Menu" aria-expanded="false" id="navToggle">
       <span></span><span></span>
     </button>
@@ -33,15 +33,11 @@
     <svg class="sprig sprig-right" viewBox="0 0 120 300" aria-hidden="true"><use href="#lavender"/></svg>
 
     <p class="hero-kicker"></p>
-    <h1 class="hero-names">
-      Sarah Roy-Molgat
-      <span class="amp">&amp;</span>
-      Philippe Niles
-    </h1>
+    <h1 class="hero-names" data-info="noms"></h1>
     <div class="divider" aria-hidden="true"><span></span>✦<span></span></div>
-    <!-- ✏️ À COMPLÉTER : date et ville -->
-    <p class="hero-date">Samedi 2 octobre 2027</p>
-    <p class="hero-place">Montréal, Québec</p>
+    <!-- Les infos vides ci-dessous sont remplies à partir de infos.js -->
+    <p class="hero-date" data-info="date"></p>
+    <p class="hero-place" data-info="ville"></p>
 
     <div class="countdown" id="countdown" aria-live="polite">
       <div><span data-unit="days">—</span><small>jours</small></div>
@@ -50,8 +46,7 @@
     </div>
 
     <a href="#rsvp" class="btn">Confirmer ma présence</a>
-    <!-- ✏️ À COMPLÉTER : date limite -->
-    <p class="hero-note">Merci de répondre avant le 1<sup>er</sup> août 2027</p>
+    <p class="hero-note">Merci de répondre avant le <span data-info="dateLimiteRSVP"></span></p>
   </header>
 
   <main>
@@ -60,29 +55,7 @@
     <section class="section" id="jour-j">
       <p class="eyebrow">Programme</p>
       <h2>Le jour J</h2>
-      <!-- ✏️ À COMPLÉTER : heures et description -->
-      <ol class="timeline">
-        <li>
-          <time>15 h 00</time>
-          <h3>Cérémonie</h3>
-          <p>Arrivez quelques minutes à l'avance pour trouver votre place.</p>
-        </li>
-        <li>
-          <time>16 h 00</time>
-          <h3>Cocktail</h3>
-          <p>Bouchées, bulles et photos dans le jardin.</p>
-        </li>
-        <li>
-          <time>18 h 30</time>
-          <h3>Souper</h3>
-          <p>Un repas végétarien servi à table.</p>
-        </li>
-        <li>
-          <time>21 h 00</time>
-          <h3>Soirée dansante</h3>
-          <p>Jusqu'aux petites heures!</p>
-        </li>
-      </ol>
+      <ol class="timeline" data-info="programme"></ol>
     </section>
 
     <!-- LIEU -->
@@ -90,12 +63,11 @@
       <p class="eyebrow">Où</p>
       <h2>Le lieu</h2>
       <div class="cards">
-        <!-- ✏️ À COMPLÉTER : nom, adresse, lien Google Maps -->
         <article class="card">
           <h3>Cérémonie &amp; réception</h3>
-          <p class="card-strong">Nom du domaine</p>
-          <p>123, rue Exemple<br>Montréal (QC)</p>
-          <a class="link" href="https://maps.google.com/?q=Montréal" target="_blank" rel="noopener">Voir sur la carte →</a>
+          <p class="card-strong" data-info="lieuNom"></p>
+          <p data-info="lieuAdresse"></p>
+          <a class="link" data-info="lieuCarte" target="_blank" rel="noopener">Voir sur la carte →</a>
         </article>
         <article class="card">
           <h3>Stationnement</h3>
@@ -155,7 +127,7 @@
     <section class="section section-rsvp" id="rsvp">
       <p class="eyebrow">Répondez s'il vous plaît</p>
       <h2>RSVP</h2>
-      <p class="section-intro">Une réponse par invitation, s'il vous plaît, avant le 1<sup>er</sup> avril 2027.</p>
+      <p class="section-intro">Une réponse par invitation, s'il vous plaît, avant le <span data-info="dateLimiteRSVP"></span>.</p>
 
       <form class="rsvp" id="rsvpForm" novalidate>
         <div class="field">
@@ -226,9 +198,8 @@
   </main>
 
   <footer class="footer">
-    <p class="footer-names">Sarah <span>&amp;</span> Philippe</p>
-    <!-- ✏️ À COMPLÉTER : courriel de contact -->
-    <p>Une question? Écrivez-nous à <a href="mailto:philippe.niles@gmail.com">philippe.niles@gmail.com</a></p>
+    <p class="footer-names" data-info="prenoms"></p>
+    <p>Une question? Écrivez-nous à <a data-info="courriel"></a></p>
   </footer>
 
   <!-- Brin de lavande réutilisable -->
@@ -256,6 +227,7 @@
     </symbol>
   </svg>
 
+  <script src="infos.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

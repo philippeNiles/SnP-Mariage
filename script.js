@@ -1,11 +1,51 @@
-// ===== CONFIGURATION =====
-// Collez ici l'URL de votre Google Apps Script (voir LISEZ-MOI.md, étape 1).
-// Tant que c'est vide, le formulaire fonctionne en mode démo (rien n'est enregistré).
-const RSVP_URL = "https://script.google.com/macros/s/AKfycbxP-RpDjO-r3ip-jw7H7t-QXqeScVGNs1LqWE_oW3-mcMiM9Mm8AQSXXElcLSqxqrVgew/exec";
+// Les infos du mariage (date, lieu, noms…) sont dans infos.js.
 
-// Date et heure de la cérémonie (pour le compte à rebours).
-const WEDDING_DATE = new Date("2027-10-02T15:00:00-04:00");
-// ==========================
+// Heure de Montréal en octobre (heure avancée de l'Est), pour que le
+// compte à rebours soit juste peu importe où se trouve l'invité.
+const FUSEAU = "-04:00";
+const WEDDING_DATE = new Date(`${INFOS.date}T${INFOS.programme[0].heure}:00${FUSEAU}`);
+
+// Remplissage des infos
+function dateEnLettres(iso) {
+  const [a, m, j] = iso.split("-").map(Number);
+  return new Date(a, m - 1, j).toLocaleDateString("fr-CA", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
+}
+function heureEnLettres(hhmm) {
+  return hhmm.replace(":", " h ");
+}
+function escapeHtml(text) {
+  const div = document.createElement("div");
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+const prenoms = INFOS.noms.map((n) => n.split(" ")[0]);
+const dateMariage = dateEnLettres(INFOS.date);
+// « 1 août 2027 » → « 1er août 2027 »
+const dateLimite = dateEnLettres(INFOS.dateLimiteRSVP).replace(/^\S+ /, "").replace(/^1 /, "1<sup>er</sup> ");
+
+const remplir = {
+  initiales: (el) => { el.innerHTML = prenoms.map((p) => escapeHtml(p[0])).join(" <span>&amp;</span> "); },
+  noms: (el) => { el.innerHTML = INFOS.noms.map(escapeHtml).join('\n<span class="amp">&amp;</span>\n'); },
+  prenoms: (el) => { el.innerHTML = prenoms.map(escapeHtml).join(" <span>&amp;</span> "); },
+  date: (el) => { el.textContent = dateMariage[0].toUpperCase() + dateMariage.slice(1); },
+  ville: (el) => { el.textContent = INFOS.ville; },
+  dateLimiteRSVP: (el) => { el.innerHTML = dateLimite; },
+  lieuNom: (el) => { el.textContent = INFOS.lieu.nom; },
+  lieuAdresse: (el) => { el.textContent = INFOS.lieu.adresse; },
+  lieuCarte: (el) => { el.href = "https://maps.google.com/?q=" + encodeURIComponent(`${INFOS.lieu.nom}, ${INFOS.lieu.adresse}`); },
+  courriel: (el) => { el.href = "mailto:" + INFOS.courrielContact; el.textContent = INFOS.courrielContact; },
+  programme: (el) => {
+    el.innerHTML = INFOS.programme.map((item) => `
+      <li>
+        <time>${escapeHtml(heureEnLettres(item.heure))}</time>
+        <h3>${escapeHtml(item.titre)}</h3>
+        <p>${escapeHtml(item.description)}</p>
+      </li>`).join("");
+  },
+};
+document.querySelectorAll("[data-info]").forEach((el) => remplir[el.dataset.info](el));
+document.title = `${prenoms.join(" & ")} — Mariage`;
 
 // Navigation
 const nav = document.getElementById("nav");
@@ -114,9 +154,9 @@ form.addEventListener("submit", async (e) => {
   submitBtn.textContent = "Envoi en cours…";
 
   try {
-    if (RSVP_URL) {
+    if (INFOS.rsvpUrl) {
       // Apps Script ne renvoie pas les en-têtes CORS : on envoie en "no-cors".
-      await fetch(RSVP_URL, { method: "POST", mode: "no-cors", body: new URLSearchParams(data) });
+      await fetch(INFOS.rsvpUrl, { method: "POST", mode: "no-cors", body: new URLSearchParams(data) });
     } else {
       console.info("Mode démo — réponse non enregistrée :", data);
       await new Promise((r) => setTimeout(r, 600));

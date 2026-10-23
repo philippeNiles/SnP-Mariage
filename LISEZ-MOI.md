@@ -4,10 +4,15 @@ Un site simple (HTML/CSS/JS, aucun outil à installer). Les réponses RSVP arriv
 
 ## Fichiers
 
-- `index.html` : tout le contenu du site. Les endroits à compléter sont marqués `✏️ À COMPLÉTER`.
+- **`infos.js` : le seul fichier à modifier pour les infos du mariage.** Noms, date, ville, lieu, date limite du RSVP, courriel de contact, programme de la journée et adresse du script RSVP. Chaque info est mise à jour partout sur le site automatiquement, y compris le compte à rebours et le lien vers la carte.
+- `index.html` : les textes plus longs (repas, FAQ). Les endroits à compléter sont marqués `✏️ À COMPLÉTER`.
 - `style.css` : les couleurs et la mise en page (palette lavande en haut du fichier).
-- `script.js` : le formulaire RSVP et le compte à rebours. **Les 2 réglages sont en haut du fichier.**
+- `script.js` : le fonctionnement du site. Pas besoin d'y toucher.
 - `apps-script.gs` : le code à coller dans Google Sheets.
+
+### Modifier une info depuis GitHub
+
+Ouvrez `infos.js` sur GitHub, cliquez sur ✏️ (*Edit this file*), changez le texte entre les guillemets, puis cliquez sur **Commit changes**. Le site est à jour 1 à 2 minutes plus tard.
 
 ## Étape 1 : brancher le RSVP sur Google Sheets (10 min)
 
@@ -20,7 +25,7 @@ Un site simple (HTML/CSS/JS, aucun outil à installer). Les réponses RSVP arriv
    - Qui a accès : **Tout le monde**
 5. Cliquez sur **Déployer** et autorisez l'accès. Google affichera « Cette application n'est pas validée » : choisissez **Paramètres avancés → Accéder au projet**. C'est normal, puisque c'est votre propre script.
 6. Copiez l'**URL de l'application Web** (elle se termine par `/exec`).
-7. Dans `script.js`, collez-la ici : `const RSVP_URL = "https://script.google.com/macros/s/…/exec";`
+7. Dans `infos.js`, collez-la ici : `rsvpUrl: "https://script.google.com/macros/s/…/exec",`
 
 Les réponses apparaîtront dans l'onglet **RSVP** du Sheet, qui se crée lors de la première réponse.
 Si quelqu'un répond deux fois, gardez la ligne la plus récente.
@@ -44,4 +49,4 @@ Pour un nom de domaine personnalisé (ex. `philippeetsarah.com`, environ 15 $/an
 
 - Remplissez le formulaire vous-même et vérifiez que la ligne apparaît dans le Sheet.
 - Ouvrez le site sur votre téléphone.
-- Tant que `RSVP_URL` est vide, le formulaire est en **mode démo** : il affiche « Merci » sans rien enregistrer.
+- Tant que `rsvpUrl` est vide, le formulaire est en **mode démo** : il affiche « Merci » sans rien enregistrer.

@@ -1,7 +1,7 @@
 // ===== CONFIGURATION =====
 // Collez ici l'URL de votre Google Apps Script (voir LISEZ-MOI.md, étape 1).
 // Tant que c'est vide, le formulaire fonctionne en mode démo (rien n'est enregistré).
-const RSVP_URL = "";
+const RSVP_URL = "https://script.google.com/macros/s/AKfycbxP-RpDjO-r3ip-jw7H7t-QXqeScVGNs1LqWE_oW3-mcMiM9Mm8AQSXXElcLSqxqrVgew/exec";
 
 // Date et heure de la cérémonie (pour le compte à rebours).
 const WEDDING_DATE = new Date("2027-06-12T15:00:00-04:00");

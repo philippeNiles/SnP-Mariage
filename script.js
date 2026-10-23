@@ -4,7 +4,7 @@
 const RSVP_URL = "https://script.google.com/macros/s/AKfycbxP-RpDjO-r3ip-jw7H7t-QXqeScVGNs1LqWE_oW3-mcMiM9Mm8AQSXXElcLSqxqrVgew/exec";
 
 // Date et heure de la cérémonie (pour le compte à rebours).
-const WEDDING_DATE = new Date("2027-06-12T15:00:00-04:00");
+const WEDDING_DATE = new Date("2027-10-02T15:00:00-04:00");
 // ==========================
 
 // Navigation

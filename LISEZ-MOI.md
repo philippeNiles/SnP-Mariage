@@ -1,4 +1,4 @@
-# Site de mariage — Philippe & Sarah
+# Site de mariage — Sarah & Philippe
 
 Un site simple (HTML/CSS/JS, aucun outil à installer). Les réponses RSVP arrivent dans un Google Sheet.
 

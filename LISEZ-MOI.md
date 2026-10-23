@@ -25,6 +25,8 @@ Un site simple (HTML/CSS/JS, aucun outil à installer). Les réponses RSVP arriv
 Les réponses apparaîtront dans l'onglet **RSVP** du Sheet, qui se crée lors de la première réponse.
 Si quelqu'un répond deux fois, gardez la ligne la plus récente.
 
+**Alerte en cas de réponse en double :** si un même nom répond une deuxième fois (sans tenir compte des majuscules, des accents ni des espaces), un courriel est envoyé à philippe.niles@gmail.com et sroymolgat@gmail.com. Il liste tous les courriels associés à ce nom ainsi que chaque réponse. Pour changer les destinataires, modifiez `ALERT_EMAILS` en haut de `apps-script.gs`. Les courriels partent du compte Google propriétaire du Sheet.
+
 > Si vous modifiez le script plus tard : **Déployer → Gérer les déploiements → ✏️ → Nouvelle version**, sinon l'ancienne version reste active.
 
 ## Étape 2 : mettre le site en ligne avec GitHub Pages (gratuit)
